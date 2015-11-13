@@ -34,7 +34,7 @@
 등록일:${dto.regDt}<br>
 수정일:${dto.edtDt}<br>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="/HighTempler/js/jquery-2.1.4.min.js"></script>
 <script src="/HighTempler/js/bootstrap.min.js"></script>
 </body>
 </html>
