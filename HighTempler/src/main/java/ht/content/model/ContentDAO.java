@@ -9,7 +9,7 @@ public interface ContentDAO {
 	 * @param idx 사찰 검색 번호 
 	 * @return 사찰 DTO
 	 */
-	Object getTempleInfo (int idx);
+	ContentDTO getTempleInfo (int idx);
 	
 	/**
 	 *  1부터 41번 까지의 모든 사찰 정보를 List로 가져옴
@@ -17,5 +17,10 @@ public interface ContentDAO {
 	 */
 	ArrayList<ContentDTO> getAllTempleInfo () ;
 	
-	
+	/**
+	 * 사찰을 이름으로 검색함
+	 * MongoDB 사용
+	 * @return
+	 */
+	ArrayList<ContentDTO> searchTemple (String query);
 }

@@ -12,6 +12,8 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
+import ht.content.model.ContentDTO;
+
 public class MongoDB {
 
 	private String uri;
@@ -86,7 +88,7 @@ public class MongoDB {
 	 * @param query 검색어
 	 * @return 검색 결과 사찰들의 idx
 	 */
-	public ArrayList<Integer> searchTemple (String query) {
+	public ArrayList<ContentDTO> searchTemple (String query) {
 		
 		//몽고DB 연결, hightempler데이터베이스 내의 temple 컬렉션 가져오기 
 		MongoClientURI mongoUri = new MongoClientURI(uri);
@@ -115,15 +117,17 @@ public class MongoDB {
 		MongoCursor<Document> cursor = result.iterator();
 		
 		//Iterator를 이용하여 값이 있는지 확인하고 while문으로 검색 결과의 idx들을 가져옴
-		ArrayList<Integer> searchResultIdx = new ArrayList<Integer>();
+		ArrayList<ContentDTO> searchResultIdx = new ArrayList<ContentDTO>();
 		if (!cursor.hasNext()) {
 			System.out.println("검색 결과가 없습니다.");
 		} else {
 			while (cursor.hasNext()) {
 				Document search = cursor.next();
 				int idx = (Integer) search.get("idx");
+				String subject = (String)search.get("SUBJECT");
 				
-				searchResultIdx.add(idx);
+				ContentDTO dto = new ContentDTO(idx, subject);
+				searchResultIdx.add(dto);
 			}
 		}
 		

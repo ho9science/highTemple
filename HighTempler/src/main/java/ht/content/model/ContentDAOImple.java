@@ -13,6 +13,8 @@ import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import ht.mongo.MongoDB;
+
 public class ContentDAOImple implements ContentDAO {
  
 	private String apiKey;
@@ -21,7 +23,7 @@ public class ContentDAOImple implements ContentDAO {
 		this.apiKey = ht.security.Key.API_KEY;
 	}
 
-	public Object getTempleInfo(int idx) {
+	public ContentDTO getTempleInfo(int idx) {
 		
 		String uri = "http://data.gwd.go.kr/apiservice/"+apiKey+"/json/cybergt-travel-temples/"+idx+"/"+idx;
 		
@@ -49,29 +51,30 @@ public class ContentDAOImple implements ContentDAO {
 			
 			if (row.size()>0) {
 				
-				HashMap<String, String> temple = (HashMap<String, String>)row.get(0);
+				HashMap<String, Object> temple = (HashMap<String, Object>)row.get(0);
 				
-				String govNm = temple.get("GOV_NM");
-				String ctgryNm = temple.get("CTGRY_NM");
-				String seqNum = temple.get("SEQ_NUM");
-				String img = temple.get("IMG");
-				String subject = temple.get("SUBJECT");
-				String addr = temple.get("NEW_ADDR");
-				String contact = temple.get("CONTACT");
-				String homepage = temple.get("HOMPAGE");
-				String tourInfm = temple.get("TOUR_INFM");
-				String usefulCharge = temple.get("USEFULL_CHARGE");
-				String carparkUsefullGuide = temple.get("CARPARK_USEFULL_GUIDE");
-				String courseInfm = temple.get("COURSE_INFM");
-				String surroundingsAttraction = temple.get("SURROUNDINGS_ATTRACTION");
-				String usefullGuide = temple.get("USEFULL_GUIDE");
-				String runDe = temple.get("RUN_DE");
-				String operTime = temple.get("OPER_TIME");
-				String runPd = temple.get("RUN_PD");
-				String trafficGuide = temple.get("TRAFFIC_GUIDE");
-				String mountiontrail = temple.get("MOUNTIONTRAIL");
-				String regDt = temple.get("REG_DT");
-				String edtDt = temple.get("EDT_DT");
+				String govNm = (String) temple.get("GOV_NM");
+				String ctgryNm = (String) temple.get("CTGRY_NM");
+				double seqNum_d = (Double) temple.get("SEQ_NUM");
+				String seqNum = ""+seqNum_d;
+				String img = (String) temple.get("IMG");
+				String subject = (String) temple.get("SUBJECT");
+				String addr = (String) temple.get("NEW_ADDR");
+				String contact = (String) temple.get("CONTACT");
+				String homepage = (String) temple.get("HOMPAGE");
+				String tourInfm = (String) temple.get("TOUR_INFM");
+				String usefulCharge = (String) temple.get("USEFULL_CHARGE");
+				String carparkUsefullGuide = (String) temple.get("CARPARK_USEFULL_GUIDE");
+				String courseInfm = (String) temple.get("COURSE_INFM");
+				String surroundingsAttraction = (String) temple.get("SURROUNDINGS_ATTRACTION");
+				String usefullGuide = (String) temple.get("USEFULL_GUIDE");
+				String runDe = (String) temple.get("RUN_DE");
+				String operTime = (String) temple.get("OPER_TIME");
+				String runPd = (String) temple.get("RUN_PD");
+				String trafficGuide = (String) temple.get("TRAFFIC_GUIDE");
+				String mountiontrail = (String) temple.get("MOUNTIONTRAIL");
+				String regDt = (String) temple.get("REG_DT");
+				String edtDt = (String) temple.get("EDT_DT");
 				 
 				dto = new ContentDTO(idx, govNm, ctgryNm, seqNum, img, subject, addr, contact, homepage, tourInfm, usefulCharge, carparkUsefullGuide, courseInfm, surroundingsAttraction, usefullGuide, runDe, operTime, runPd, trafficGuide, mountiontrail, regDt, edtDt);
 				System.out.println("절 이름 : "+subject+" DTO 생성 완료!");
@@ -157,6 +160,28 @@ public class ContentDAOImple implements ContentDAO {
 		}
 		
 		return resultList;
+	}
+	
+	
+	public ArrayList<ContentDTO> searchTemple(String query) {
+		
+		MongoDB db = new MongoDB();
+		
+		ArrayList<ContentDTO> searchArr = db.searchTemple(query);
+				
+//		ArrayList<ContentDTO> resultArr = new ArrayList<ContentDTO>();
+//		for (int i=0 ; i<searchArr.size() ; i++) {
+//			
+//			int idx = searchArr.get(i);
+//			
+//			ContentDTO dto = getTempleInfo(idx);
+//			
+//			resultArr.add(dto);
+//		}
+		
+		
+		
+		return searchArr;
 	}
 
 }

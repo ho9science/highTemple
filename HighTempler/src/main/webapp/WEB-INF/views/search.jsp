@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE>
 <html>
 <head>
@@ -10,21 +11,14 @@
  <link href="/HighTempler/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<h1>Wellcome</h1>
 
-<form action="content.do">
-	1~41 까지의 사찰 정보를 확인 가능<br>
-	<input type="text" name="idx" placeholder="사찰 IDX" required="required">
-	<button type="submit">사찰 정보보기</button>
-</form>
+<c:set var="list" value="${result}"/>
 
-<form action="search.do">
-	사찰 이름으로 검색<br>
-	<input type="text" name="query" placeholder="사찰 이름" required="required">
-	<button type="submit">사찰 검색하기</button>
-</form>
+<c:forEach var="dto" items="${list}">
+<a href="/HighTempler/content.do?idx=${dto.idx}">사찰 이름:${dto.subject}</a><br>
+<br>
+</c:forEach>
 
-<a href="listall.do">전체 사찰 목록</a>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="/HighTempler/js/bootstrap.min.js"></script>
