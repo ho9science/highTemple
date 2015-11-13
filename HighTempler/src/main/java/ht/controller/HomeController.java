@@ -38,10 +38,10 @@ public class HomeController {
 	@RequestMapping("/test.do")
 	public ModelAndView test() {
 		
-		ArrayList<ContentDTO> result = contentDao.getAllTempleInfo();
+		MongoDB db = new MongoDB();
+		db.searchTemple("금강");
 		
 		ModelAndView mav = new ModelAndView("jsonView");
-		mav.addObject("result", result);
 		return mav;
 	}
 }
