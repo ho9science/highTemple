@@ -14,18 +14,6 @@ import ht.mongo.MongoDB;
 @Controller
 public class HomeController {
 
-	@Autowired
-	private ContentDAO contentDao;
-	
-	public ContentDAO getContentDao() {
-		return contentDao;
-	}
-
-	public void setContentDao(ContentDAO contentDao) {
-		this.contentDao = contentDao;
-	}
-	
-
 	public HomeController() {
 		// TODO Auto-generated constructor stub
 	}
@@ -34,14 +22,5 @@ public class HomeController {
 	public String home() {
 		return "home";
 	}
-	
-	@RequestMapping("/test.do")
-	public ModelAndView test() {
-		
-		MongoDB db = new MongoDB();
-		db.searchTemple("금강");
-		
-		ModelAndView mav = new ModelAndView("jsonView");
-		return mav;
-	}
+
 }

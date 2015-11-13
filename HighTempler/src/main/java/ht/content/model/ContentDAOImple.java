@@ -9,32 +9,12 @@ import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.bson.Document;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-
-import ht.mongo.MongoDB;
 public class ContentDAOImple implements ContentDAO {
  
-	@Autowired
-	private MongoDB mongoDB;
-	
-	public MongoDB getMongoDB() {
-		return mongoDB;
-	}
-
-	public void setMongoDB(MongoDB mongoDB) {
-		this.mongoDB = mongoDB;
-	}
-
-	
 	private String apiKey;
 	
 	public ContentDAOImple() {

@@ -2,27 +2,20 @@ package ht.mongo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-import org.bson.BSON;
-import org.bson.BsonDocument;
 import org.bson.Document;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import com.mongodb.MongoGridFSException;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
-import ht.content.model.ContentDTO;
-
 public class MongoDB {
 
 	private String uri;
 	private MongoClient client;
-	private MongoClientURI mongoUri;
 	
 	public MongoDB() {
 		this.uri = ht.security.Key.MONGODB_URI;

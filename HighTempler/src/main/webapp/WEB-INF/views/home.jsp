@@ -12,6 +12,18 @@
 <body>
 <h1>Wellcome</h1>
 
+<form action="content.do">
+	<input type="text" name="idx" placeholder="사찰 IDX" required="required">
+	<button type="submit">사찰 정보보기</button>
+</form>
+
+<form action="search.do">
+	<input type="text" name="query" placeholder="사찰 이름" required="required">
+	<button type="submit">사찰 검색하기</button>
+</form>
+
+<a>전체 사찰 목록</a>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="/HighTempler/js/bootstrap.min.js"></script>
 </body>
