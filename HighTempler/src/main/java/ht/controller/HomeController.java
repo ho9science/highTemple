@@ -1,13 +1,27 @@
 package ht.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ht.content.model.ContentDAO;
 import ht.mongo.MongoDB;
 
 @Controller
 public class HomeController {
+
+	@Autowired
+	private ContentDAO contentDao;
+	
+	public ContentDAO getContentDao() {
+		return contentDao;
+	}
+
+	public void setContentDao(ContentDAO contentDao) {
+		this.contentDao = contentDao;
+	}
+	
 
 	public HomeController() {
 		// TODO Auto-generated constructor stub
@@ -21,10 +35,10 @@ public class HomeController {
 	@RequestMapping("/test.do")
 	public ModelAndView test() {
 		
-		MongoDB md = new MongoDB();
-		md.test();
+		Object result = contentDao.getTempleInfo(1);
 		
 		ModelAndView mav = new ModelAndView("jsonView");
+		mav.addObject("result", result);
 		return mav;
 	}
 }

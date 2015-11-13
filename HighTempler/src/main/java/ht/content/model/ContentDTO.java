@@ -2,12 +2,14 @@ package ht.content.model;
 
 public class ContentDTO {
 
+	/**검색 번호*/
+	private int idx;
 	/**시 이름*/
 	private String govNm;
 	/**카테고리*/
 	private String ctgryNm;
 	/**일련번호*/
-	private int seqNum;
+	private String seqNum;
 	/**이미지*/
 	private String img;
 	/**제목*/
@@ -49,11 +51,14 @@ public class ContentDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ContentDTO(String govNm, String ctgryNm, int seqNum, String img, String subject, String addr, String contact,
-			String homepage, String tourInfm, String usefulCharge, String carparkUsefullGuide, String courseInfm,
-			String surroundingsAttraction, String usefullGuide, String runDe, String operTime, String runPd,
-			String trafficGuide, String mountiontrail, String regDt, String edtDt) {
+	
+
+	public ContentDTO(int idx, String govNm, String ctgryNm, String seqNum, String img, String subject, String addr,
+			String contact, String homepage, String tourInfm, String usefulCharge, String carparkUsefullGuide,
+			String courseInfm, String surroundingsAttraction, String usefullGuide, String runDe, String operTime,
+			String runPd, String trafficGuide, String mountiontrail, String regDt, String edtDt) {
 		super();
+		this.idx = idx;
 		this.govNm = govNm;
 		this.ctgryNm = ctgryNm;
 		this.seqNum = seqNum;
@@ -77,6 +82,20 @@ public class ContentDTO {
 		this.edtDt = edtDt;
 	}
 
+	
+
+	public int getIdx() {
+		return idx;
+	}
+
+
+
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
+
+
+
 	public String getGovNm() {
 		return govNm;
 	}
@@ -93,11 +112,11 @@ public class ContentDTO {
 		this.ctgryNm = ctgryNm;
 	}
 
-	public int getSeqNum() {
+	public String getSeqNum() {
 		return seqNum;
 	}
 
-	public void setSeqNum(int seqNum) {
+	public void setSeqNum(String seqNum) {
 		this.seqNum = seqNum;
 	}
 
@@ -244,7 +263,6 @@ public class ContentDTO {
 	public void setEdtDt(String edtDt) {
 		this.edtDt = edtDt;
 	}
-	
 	
 	
 }
