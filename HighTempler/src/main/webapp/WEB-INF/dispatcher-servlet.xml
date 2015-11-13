@@ -17,6 +17,8 @@
 	
 	<bean id="contentDao" class="ht.content.model.ContentDAOImple"></bean>
 	
+	<bean id="mongoDB" class="ht.mongo.MongoDB"></bean>
+	
 	<!-- view -->
 	<bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJacksonJsonView"/>
 
