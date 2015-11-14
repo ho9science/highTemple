@@ -28,6 +28,12 @@ public class ContentController {
 	public ContentController() {
 	}
 
+	/**
+	 * 사찰 검색 번호를 받아서
+	 * 사찰 상세정보를 보여주는 페이지로 이동
+	 * @param idx 사찰 번호
+	 * @return 사찰 상세정보
+	 */
 	@RequestMapping("/content.do")
 	public ModelAndView content(
 			@RequestParam("idx")int idx) {
@@ -39,6 +45,12 @@ public class ContentController {
 		return mav;
 	}
 	
+	/**
+	 * 검색어를 받아서
+	 * 검색 결과 목록을 보여주는 페이지로 이동
+	 * @param query 검색어
+	 * @return 검색 결과 
+	 */
 	@RequestMapping("/search.do")
 	public ModelAndView search(
 			@RequestParam("query")String query) {
@@ -50,6 +62,10 @@ public class ContentController {
 		return mav;
 	}
 	
+	/**
+	 * 모든 사찰 정보를 보여주는 페이지로 이동
+	 * @return 모든 사찰 정보 리스트
+	 */
 	@RequestMapping("/listall.do")
 	public ModelAndView templeListALl() {
 		
