@@ -23,7 +23,6 @@ public class ContentDAOImple implements ContentDAO {
 		this.apiKey = ht.security.Key.API_KEY;
 	}
 
-	@Override
 	public ContentDTO getTempleInfo(int idx) {
 		
 		String uri = "http://data.gwd.go.kr/apiservice/"+apiKey+"/json/cybergt-travel-temples/"+idx+"/"+idx;
@@ -96,7 +95,6 @@ public class ContentDAOImple implements ContentDAO {
 		return dto;
 	}
 
-	@Override
 	public ArrayList<ContentDTO> getAllTempleInfo() {
 		
 
@@ -165,7 +163,6 @@ public class ContentDAOImple implements ContentDAO {
 	}
 	
 	
-	@Override
 	public ArrayList<ContentDTO> searchTemple(String query) {
 		
 		MongoDB db = new MongoDB();
