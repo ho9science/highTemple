@@ -106,15 +106,19 @@ public class MongoDB {
 		System.out.println("검색어 : "+query);
 		System.out.println("치환 : "+keyword);
 		
+		
 		//find 명령어를 위한 BSON 생성 {SUBJECT:{$regex:검색어}}
 		Document regex = new Document("$regex", keyword.toString());
 		Document doc = new Document("SUBJECT", regex);
 		
-		//검색
+		
+		//검색 (위의 BSON 객체를 이용함)
 		FindIterable<Document> result = coll.find(doc);
 		
-		//Iterator로 반환
+		
+		//Iterator로 반환 (While문으로 돌리기 위해서)
 		MongoCursor<Document> cursor = result.iterator();
+		
 		
 		//Iterator를 이용하여 값이 있는지 확인하고 while문으로 검색 결과의 idx들을 가져옴
 		ArrayList<ContentDTO> searchResultIdx = new ArrayList<ContentDTO>();

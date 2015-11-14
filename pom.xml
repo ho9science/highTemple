@@ -9,14 +9,9 @@
 
 	<properties>
 		<spring.version>3.0.5.RELEASE</spring.version>
+		<jersey.version>2.22.1</jersey.version>
 	</properties>
-
-	<repositories>
-		<repository>
-			<id>mesir-repo</id>
-			<url>http://mesir.googlecode.com/svn/trunk/mavenrepo</url>
-		</repository>
-	</repositories>
+	
 
 	<dependencies>
 
@@ -25,15 +20,15 @@
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-client</artifactId>
-			<version>2.22.1</version>
+			<version>${jersey.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.glassfish.jersey.media</groupId>
 			<artifactId>jersey-media-json-jackson</artifactId>
-			<version>2.22.1</version>
+			<version>${jersey.version}</version>
 		</dependency>
-
+ 
 		<!-- JSON -->
 		<dependency>
 			<groupId>net.sf.json-lib</groupId>
@@ -56,33 +51,7 @@
 		</dependency>
 
 
-		<!-- -->
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc14</artifactId>
-			<version>10.2.0.4.0</version>
-		</dependency>
-
-		<!-- dbcp -->
-
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-pool</groupId>
-			<artifactId>commons-pool</artifactId>
-			<version>1.6</version>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-collections</groupId>
-			<artifactId>commons-collections</artifactId>
-			<version>3.2.1</version>
-		</dependency>
-
+		
 		<!-- -->
 
 		<dependency>
