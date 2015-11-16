@@ -10,7 +10,7 @@
  <link href="/HighTempler/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<h1>Wellcome</h1>
+<h1>안녕</h1>
 
 <form action="content.do">
 	1~41번의 사찰 정보를 확인 가능<br>
