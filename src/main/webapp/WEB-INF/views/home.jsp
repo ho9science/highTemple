@@ -24,6 +24,12 @@
 	<button type="submit" class="btn btn-primary">사찰 검색하기</button>
 </form>
 
+<form action="imageSearch.do">
+	사찰 이름으로 이미지 검색<br>
+	<input type="text" name="subject" class="form-control" placeholder="사찰 이름" required="required">
+	<button type="submit" class="btn btn-primary">사찰 이미지 검색하기</button>
+</form>
+
 <a href="listall.do"><button class="btn btn-primary">전체 사찰 목록</button></a>
 
 <script src="/HighTempler/js/jquery-2.1.4.min.js"></script>

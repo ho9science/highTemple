@@ -12,6 +12,11 @@
 </head>
 <body>
 
+<div class="container-fluid banner text-center" id="banner" style="height:250px;">
+	<div class="row">
+		
+	</div>
+</div>
 <c:set var="dto" value="${result}"/>
 
 사찰 이름:${dto.subject}<br>
@@ -33,6 +38,7 @@
 등산로:${dto.mountiontrail}<br>
 등록일:${dto.regDt}<br>
 수정일:${dto.edtDt}<br>
+
 
 <script src="/HighTempler/js/jquery-2.1.4.min.js"></script>
 <script src="/HighTempler/js/bootstrap.min.js"></script>

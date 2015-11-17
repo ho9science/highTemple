@@ -16,6 +16,7 @@
 	<!-- service -->
 	
 	<bean id="contentDao" class="ht.content.model.ContentDAOImple"></bean>
+	<bean id="imageSearchDao" class="ht.imageSearch.model.ImageSearchDAOImple"></bean>
 	
 	<bean id="mongoDB" class="ht.mongo.MongoDB"></bean>
 	
