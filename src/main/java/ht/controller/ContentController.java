@@ -41,12 +41,26 @@ public class ContentController {
 		ContentDTO result = contentDao.getTempleInfo(idx);
 		String imgs = result.getImg();
 		String img[] = imgs.split(".jpg");
+		
+		ArrayList<String> arr = new ArrayList<String>();
 		for(int i=0 ; i<img.length ; i++) {
-			img[i] = img[i]+".jpg";
+			//img[i] = img[i]+".jpg";
+			
+			String img2[] = img[i].split(".JPG");
+			for(int j=0 ; j<img2.length-1 ; j++) {
+				
+				img2[j] = img2[j]+".jpg";
+				
+				arr.add(img2[j]);
+			}
+			
 		}
+		
+		
+		
 		ModelAndView mav = new ModelAndView("content");
 		mav.addObject("result", result);
-		mav.addObject("img", img);
+		mav.addObject("img", arr);
 		return mav;
 	}
 	
