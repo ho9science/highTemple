@@ -8,7 +8,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>사찰이 사찰이</title>
  <link href="/HighTempler/css/bootstrap.min.css" rel="stylesheet">
- <link href="/HighTempler/css/style.css" rel="stylesheet">
 </head>
 <body>
 <h1>Wellcome</h1>
