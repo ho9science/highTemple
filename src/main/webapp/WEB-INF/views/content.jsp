@@ -11,22 +11,50 @@
  <link href="/HighTempler/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
-<div class="container-fluid banner text-center" id="banner" style="height:250px;">
-	<div class="row">
-		
-	</div>
-</div>
+<!-- 헤더부분 -->
+<!-- 헤더부분 끝 -->
 <c:set var="dto" value="${result}"/>
+<div class="col-sm-12">
+	<img alt="임시 사진" src="${img[0]}" class="img-rounded img-responsive">
+</div>
 
-사찰 이름:${dto.subject}<br>
-사찰 주소:${dto.addr}<br>
-검색 번호:${dto.idx}<br>
-시 이름:${dto.govNm}<br>
-문의처:${dto.contact}<br>
-홈페이지:${dto.homepage}<br>
-여행 정보:${dto.tourInfm}<br>
-이용 요금:${dto.usefulCharge}<br>
+<div class="col-sm-12 text-center"><h2>${dto.subject}</h2></div>
+
+<div class="col-sm-12 text-right">
+	<p><small>${dto.addr}</small></p>
+</div>
+
+<c:if test="${!empty dto.contact}">
+	<div class="col-sm-12">
+		<p>문의처:${dto.contact}</p>
+	</div>
+</c:if>
+<c:if test="${empty dto.contact}">
+	<div class="col-sm-12">문의처가 없습니다.</div>
+</c:if>
+
+<c:if test="${!empty dto.homepage}">
+	<div class="col-sm-12">
+		<p>홈페이지:${dto.homepage}</p>
+	</div>
+</c:if>
+<c:if test="${empty dto.homepage}">
+	<div class="col-sm-12">홈페이지가 없습니다.</div>
+</c:if>
+
+<br>
+
+<div class="col-sm-12">
+<label>여행 정보:</label>
+<p>${dto.tourInfm}</p>
+</div>
+
+
+<div>이용 요금:
+	<p>${dto.usefulCharge}</p>
+</div>
+
+
 주차장 이용 정보:${dto.carparkUsefullGuide}<br>
 코스정보:${dto.courseInfm}<br>
 주변정보:${dto.surroundingsAttraction}<br>
@@ -39,6 +67,9 @@
 등록일:${dto.regDt}<br>
 수정일:${dto.edtDt}<br>
 
+<c:forEach var="path" items="${img}">
+	<img alt="임시 사진" src="${path}" class="img-rounded img-responsive">
+</c:forEach>
 
 <script src="/HighTempler/js/jquery-2.1.4.min.js"></script>
 <script src="/HighTempler/js/bootstrap.min.js"></script>

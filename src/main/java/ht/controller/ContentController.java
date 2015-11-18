@@ -39,9 +39,14 @@ public class ContentController {
 			@RequestParam("idx")int idx) {
 		
 		ContentDTO result = contentDao.getTempleInfo(idx);
-		
+		String imgs = result.getImg();
+		String img[] = imgs.split(".jpg");
+		for(int i=0 ; i<img.length ; i++) {
+			img[i] = img[i]+".jpg";
+		}
 		ModelAndView mav = new ModelAndView("content");
 		mav.addObject("result", result);
+		mav.addObject("img", img);
 		return mav;
 	}
 	
