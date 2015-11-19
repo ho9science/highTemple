@@ -63,21 +63,42 @@ public class ContentDAOImple implements ContentDAO {
 				String contact = (String) temple.get("CONTACT");
 				String homepage = (String) temple.get("HOMPAGE");
 				String tourInfm = (String) temple.get("TOUR_INFM");
+				tourInfm = tourInfm.replaceFirst("▒", "");
+				tourInfm = tourInfm.replaceAll("▒", "\n\n");
+				
 				String usefulCharge = (String) temple.get("USEFULL_CHARGE");
+				usefulCharge = usefulCharge.replaceFirst("▒", "");
+				usefulCharge = usefulCharge.replaceAll("▒", "\n");
+				
 				String carparkUsefullGuide = (String) temple.get("CARPARK_USEFULL_GUIDE");
+				carparkUsefullGuide = carparkUsefullGuide.replaceFirst("▒", "");
+				carparkUsefullGuide = carparkUsefullGuide.replaceAll("▒", "\n");
+				
 				String courseInfm = (String) temple.get("COURSE_INFM");
+				courseInfm = courseInfm.replaceFirst("▒", "");
+				courseInfm = courseInfm.replaceAll("▒", "\n");
+				
 				String surroundingsAttraction = (String) temple.get("SURROUNDINGS_ATTRACTION");
 				String usefullGuide = (String) temple.get("USEFULL_GUIDE");
+				usefullGuide = usefullGuide.replaceFirst("▒", "");
+				usefullGuide = usefullGuide.replaceAll("▒", "\n");
+				
 				String runDe = (String) temple.get("RUN_DE");
 				String operTime = (String) temple.get("OPER_TIME");
 				String runPd = (String) temple.get("RUN_PD");
 				String trafficGuide = (String) temple.get("TRAFFIC_GUIDE");
+				trafficGuide = trafficGuide.replaceFirst("▒", "");
+				trafficGuide = trafficGuide.replaceAll("▒", "\n");
+				
 				String mountiontrail = (String) temple.get("MOUNTIONTRAIL");
+				mountiontrail = mountiontrail.replaceFirst("▒", "");
+				mountiontrail = mountiontrail.replaceAll("▒", "\n");
+				
 				String regDt = (String) temple.get("REG_DT");
 				String edtDt = (String) temple.get("EDT_DT");
 				 
 				dto = new ContentDTO(idx, govNm, ctgryNm, seqNum, img, subject, addr, contact, homepage, tourInfm, usefulCharge, carparkUsefullGuide, courseInfm, surroundingsAttraction, usefullGuide, runDe, operTime, runPd, trafficGuide, mountiontrail, regDt, edtDt);
-				System.out.println("절 이름 : "+subject+" DTO 생성 완료!");
+				System.out.println(subject+" DTO 생성 완료!");
 				 
 			}
 			
