@@ -601,9 +601,9 @@ figure.effect-Beauty:hover p {
 }
 .form-control, .form-control:focus
 {
-	color: #fff !important;
+	color: #000000 !important;
 	border: 1px solid #fff !important;
-	background-color: #CB5750 !important;
+	background-color: #ffffff !important;
 	box-shadow: none !important;
 }
 .social
@@ -643,10 +643,16 @@ figure.effect-Beauty:hover p {
 	border: 1px solid #fff !important;
 	color: #CB5750 !important;
 }
-.form-control::-webkit-input-placeholder { color: white !important; }
-.form-control:-moz-placeholder { color: white !important; }
-.form-control::-moz-placeholder { color: white !important; }
-.form-control:-ms-input-placeholder { color: white !important; }
+.btn-nav
+{
+	background-color: #fff !important;
+	border: 1px solid #fff !important;
+	color: #3EC9C3 !important; 
+}
+.form-control::-webkit-input-placeholder { color: #3EC9C3 !important; }
+.form-control:-moz-placeholder { color: #3EC9C3 !important; }
+.form-control::-moz-placeholder { color: #3EC9C3 !important; }
+.form-control:-ms-input-placeholder { color: #3EC9C3 !important; }
 
 /*------------------------------------------/
 /-----------------Footer--------------------/
@@ -711,6 +717,7 @@ display: inline-block;
     margin-top: 9px !important;
     font-size: 30px !important;
 	color: #fff;
+	border: none !important;
 }
 figure.effect-Beauty h2 {
     margin-top: 15%;

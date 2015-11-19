@@ -60,32 +60,52 @@ public class ContentDAOImple implements ContentDAO {
 				String img = (String) temple.get("IMG");
 				String subject = (String) temple.get("SUBJECT");
 				String addr = (String) temple.get("NEW_ADDR");
+				
 				String contact = (String) temple.get("CONTACT");
 				String homepage = (String) temple.get("HOMPAGE");
+				
 				String tourInfm = (String) temple.get("TOUR_INFM");
 				tourInfm = tourInfm.replaceFirst("▒", "");
 				tourInfm = tourInfm.replaceAll("▒", "\n\n");
 				
 				String usefulCharge = (String) temple.get("USEFULL_CHARGE");
-				usefulCharge = usefulCharge.replaceFirst("▒", "");
-				usefulCharge = usefulCharge.replaceAll("▒", "\n");
+				if (usefulCharge==null || usefulCharge.equals("")) {
+					usefulCharge = "요금 없음";
+				} else {
+					usefulCharge = usefulCharge.replaceFirst("▒", "");
+					usefulCharge = usefulCharge.replaceAll("▒", "\n");
+				}
 				
 				String carparkUsefullGuide = (String) temple.get("CARPARK_USEFULL_GUIDE");
-				carparkUsefullGuide = carparkUsefullGuide.replaceFirst("▒", "");
-				carparkUsefullGuide = carparkUsefullGuide.replaceAll("▒", "\n");
+				if (carparkUsefullGuide==null || carparkUsefullGuide.equals("")) {
+					carparkUsefullGuide = "없음";
+				} else {
+					carparkUsefullGuide = carparkUsefullGuide.replaceFirst("▒", "");
+					carparkUsefullGuide = carparkUsefullGuide.replaceAll("▒", "\n");
+				}
 				
 				String courseInfm = (String) temple.get("COURSE_INFM");
-				courseInfm = courseInfm.replaceFirst("▒", "");
-				courseInfm = courseInfm.replaceAll("▒", "\n");
+				if (courseInfm==null || courseInfm.equals("")) {
+					courseInfm = "없음";
+				} else {
+					courseInfm = courseInfm.replaceFirst("▒", "");
+					courseInfm = courseInfm.replaceAll("▒", "\n");
+				}
 				
 				String surroundingsAttraction = (String) temple.get("SURROUNDINGS_ATTRACTION");
+				
 				String usefullGuide = (String) temple.get("USEFULL_GUIDE");
-				usefullGuide = usefullGuide.replaceFirst("▒", "");
-				usefullGuide = usefullGuide.replaceAll("▒", "\n");
+				if (usefullGuide==null || usefullGuide.equals("")) {
+					usefullGuide = "없음";
+				} else {
+					usefullGuide = usefullGuide.replaceFirst("▒", "");
+					usefullGuide = usefullGuide.replaceAll("▒", "\n");					
+				}
 				
 				String runDe = (String) temple.get("RUN_DE");
 				String operTime = (String) temple.get("OPER_TIME");
 				String runPd = (String) temple.get("RUN_PD");
+				
 				String trafficGuide = (String) temple.get("TRAFFIC_GUIDE");
 				trafficGuide = trafficGuide.replaceFirst("▒", "");
 				trafficGuide = trafficGuide.replaceAll("▒", "\n");
