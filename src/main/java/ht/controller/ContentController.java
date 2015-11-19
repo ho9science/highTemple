@@ -47,7 +47,7 @@ public class ContentController {
 			//img[i] = img[i]+".jpg";
 			
 			String img2[] = img[i].split(".JPG");
-			for(int j=0 ; j<img2.length-1 ; j++) {
+			for(int j=0 ; j<img2.length ; j++) {
 				
 				img2[j] = img2[j]+".jpg";
 				
@@ -55,7 +55,6 @@ public class ContentController {
 			}
 			
 		}
-		
 		
 		
 		ModelAndView mav = new ModelAndView("content");
