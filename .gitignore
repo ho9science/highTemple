@@ -52,5 +52,4 @@ release.properties
 *.ear
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml 
-hs_err_pid* 
-[출처] [Git] git ignore 파일 (Eclipse + Maven + Java)|작성자 이초록
+hs_err_pid*

@@ -11,34 +11,111 @@
  <link href="/HighTempler/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<!-- 헤더부분 -->
+<!-- 헤더부분 끝 -->
+<c:set var="dto" value="${result}"/>
+<div class="col-xs-12">
+	<img alt="임시 사진" src="${img[0]}" class="img-rounded img-responsive">
+</div>
 
-<div class="container-fluid banner text-center" id="banner" style="height:250px;">
-	<div class="row">
-		
+<div class="col-xs-12 text-center"><h2>${dto.subject}</h2></div>
+
+<div class="col-xs-12 text-right">
+	<p><small>${dto.addr}</small></p>
+</div>
+
+<div class="row col-xs-12">
+	<div class="col-xs-6">
+		<label>문의처:</label>
+		<c:if test="${!empty dto.contact}">	
+			<p>${dto.contact}</p>
+		</c:if>
+		<c:if test="${empty dto.contact}">
+			<p>없음</p>
+		</c:if>
+	</div>
+	
+	<div class="col-xs-6">
+		<label>홈페이지:</label>
+		<c:if test="${!empty dto.homepage}">
+			<p>${dto.homepage}</p>
+		</c:if>
+		<c:if test="${empty dto.homepage}">
+			<p>없음</p>
+		</c:if>
 	</div>
 </div>
-<c:set var="dto" value="${result}"/>
 
-사찰 이름:${dto.subject}<br>
-사찰 주소:${dto.addr}<br>
-검색 번호:${dto.idx}<br>
-시 이름:${dto.govNm}<br>
-문의처:${dto.contact}<br>
-홈페이지:${dto.homepage}<br>
-여행 정보:${dto.tourInfm}<br>
-이용 요금:${dto.usefulCharge}<br>
-주차장 이용 정보:${dto.carparkUsefullGuide}<br>
-코스정보:${dto.courseInfm}<br>
-주변정보:${dto.surroundingsAttraction}<br>
-이용 가이드:${dto.usefullGuide}<br>
-개장일:${dto.runDe}<br>
-운영 시간:${dto.operTime}<br>
-개장 기간:${dto.runPd}<br>
-교통안내:${dto.trafficGuide}<br>
-등산로:${dto.mountiontrail}<br>
-등록일:${dto.regDt}<br>
-수정일:${dto.edtDt}<br>
+<br>
 
+<div class="col-xs-12">
+	<label>여행 정보:</label>
+	<p>${dto.tourInfm}</p>
+</div>
+
+
+<div class="col-xs-12">
+	<label>이용 요금:</label>
+	<p>${dto.usefulCharge}</p>
+</div>
+
+<div class="col-xs-12">
+	<label>주차장 이용 정보:</label>
+	<p>${dto.carparkUsefullGuide}</p>
+</div>
+
+<div class="col-xs-12">
+	<label>코스정보:</label>
+	
+	<c:if test="${!empty dto.courseInfm}">
+		<p>${dto.courseInfm}</p>
+	</c:if>
+	<c:if test="${empty dto.courseInfm}">
+		<p>없음</p>
+	</c:if>
+</div>
+
+
+<div class="col-xs-12">
+	<label>주변정보:</label>
+	<p>${dto.surroundingsAttraction}</p>
+</div>
+
+
+<div class="col-xs-12">
+	<label>이용 가이드:</label>
+	<p>${dto.usefullGuide}</p>
+</div>
+
+<div class="col-xs-12">
+	개장일:${dto.runDe}<br>
+	운영 시간:${dto.operTime}<br>
+	개장 기간:${dto.runPd}<br>
+</div>
+
+<div class="col-xs-12">
+	<br>
+	<p>${dto.trafficGuide}</p>
+	<br>
+	<p>${dto.mountiontrail}</p>
+	<br>
+</div>
+
+
+
+<c:forEach var="path" items="${img}">
+	<div class="col-xs-6">
+		<img alt="임시 사진" src="${path}" class="img-rounded img-responsive">
+	</div>
+</c:forEach>
+
+<div class="col-xs-12">
+	<small>
+		등록일:${dto.regDt} | 
+		수정일:${dto.edtDt}
+	</small>
+	<br>
+</div>
 
 <script src="/HighTempler/js/jquery-2.1.4.min.js"></script>
 <script src="/HighTempler/js/bootstrap.min.js"></script>
