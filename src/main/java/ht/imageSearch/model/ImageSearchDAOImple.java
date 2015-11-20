@@ -33,6 +33,7 @@ public class ImageSearchDAOImple implements ImageSearchDAO {
 				String title = el.getElementsByTagName("title").item(0).getTextContent();
 				String link = el.getElementsByTagName("link").item(0).getTextContent();
 				String thumbnail = el.getElementsByTagName("thumbnail").item(0).getTextContent();
+				thumbnail.substring(35);
 				ImageSearchDTO dto = new ImageSearchDTO(title, link, thumbnail);
 				System.out.println("title:"+title+" link:"+link+" thumbnail:"+thumbnail);
 				list.add(dto);
