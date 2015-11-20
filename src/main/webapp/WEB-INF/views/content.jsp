@@ -7,24 +7,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Insert title here</title>
+<title>${result.subject} :: 사찰이</title>
  <link href="/HighTempler/css/bootstrap.min.css" rel="stylesheet">
  <link href="/HighTempler/css/style.css" rel="stylesheet">
- <style type="text/css">
- body{
- 	padding-top: 68px;
- }
- .modal-img{
- 	width: 100%;
- }
- .header-img{
- 	background-color: #3EC9C3;
- 	color: white;
- }
- .tour-infm h3{
- 	color: #CB5750;
- }
- </style>
+ <link href="/HighTempler/css/hi.css" rel="stylesheet">
 </head>
 <body>
 <!-- 헤더부분 -->
@@ -71,13 +57,21 @@
 </div>
  -->
 <div class="col-xs-12">
-	<div class="col-xs-12 tour-infm">
-		<h3>여행 정보</h3>
-		<p>${dto.tourInfm}</p>
+	<div class="col-xs-12 tour-infm form-inline">
+		<a data-toggle="collapse" href="#infm" aria-expanded="false" aria-controls="infm">
+			<h3>여행 정보</h3>
+		</a>
+		<a class="btn btn-nav" data-toggle="collapse" href="#infm" aria-expanded="false" aria-controls="infm">
+			펼치기
+		</a>
+		<div class="collapse" id="infm">
+			<p>${dto.tourInfm}</p>
+		</div>
 	</div>
 
 
 	<div class="col-xs-12">
+		<br>
 		<h4>이용요금</h4>
 		<p>${dto.usefulCharge}</p>
 	</div>
@@ -105,6 +99,7 @@
 	</div>
 	
 	<div class="col-xs-12">
+		<br>
 		<dl class="dl-horizontal">
 			<dt>개장일:</dt>
 			<dd>${dto.runDe}</dd>
@@ -120,6 +115,7 @@
 	</div>
 	
 	<div class="col-xs-12">
+		<h4>교통 및 등산로 안내</h4>		
 		<br>
 		<p>${dto.trafficGuide}</p>
 		<br>
@@ -127,12 +123,7 @@
 		<br>
 	</div>
 </div>
-<div>
-	<form action="imageSearch.do">
-		<input type="hidden" name="subject" value="${dto.subject }">
-		<button type="submit" class="btn btn-primary">사찰 이미지 더보기</button>
-	</form>
-</div>
+
 <c:set var="imgs" value="${img}"/>
 
 <c:forEach begin="0" end="${imgs.size()-1}" step="1" var="step">
@@ -155,15 +146,18 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-
-	
 </c:forEach>
 
-<div>
+<div class="col-xs-12">
+	<form action="imageSearch.do">
+		<input type="hidden" name="subject" value="${dto.subject }">
+		<button type="submit" class="btn btn-nav">사찰 이미지 더보기</button>
+	</form>
 	<hr>
 </div>
 
-<footer class="foot">
+
+
 
 <div class="row col-xs-12">
 	<br>
@@ -176,7 +170,7 @@
 	<br>
 </div>
 <jsp:include page="footer.jsp"></jsp:include>
-</footer>
+
 
 <script src="/HighTempler/js/jquery-2.1.4.min.js"></script>
 <script src="/HighTempler/js/bootstrap.min.js"></script>

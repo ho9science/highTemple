@@ -10,6 +10,7 @@
 <title>사찰이 사찰이</title>
 <link href="/HighTempler/css/bootstrap.min.css" rel="stylesheet">
 <link href="/HighTempler/css/style.css" rel="stylesheet">
+<link href="/HighTempler/css/hi.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container-fluid banner text-center" id="banner"

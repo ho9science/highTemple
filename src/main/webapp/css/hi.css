@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+body{
+	padding-top: 68px;
+}
+
+.modal-img{
+	width: 100%;
+}
+.header-img{
+	background-color: #3EC9C3;
+	color: white;
+}
+
+
+table
+{
+	width: 100%;
+}
+
+h3
+{
+	color: #CB5750;
+}
+h4
+{
+	color : #CB5750;
+}
