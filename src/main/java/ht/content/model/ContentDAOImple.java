@@ -103,6 +103,10 @@ public class ContentDAOImple implements ContentDAO {
 				}
 				
 				String runDe = (String) temple.get("RUN_DE");
+				if (runDe==null || runDe.equals("")) {
+					runDe = "상시 이용 가능";
+				}
+				
 				String operTime = (String) temple.get("OPER_TIME");
 				String runPd = (String) temple.get("RUN_PD");
 				
