@@ -130,7 +130,19 @@ public class MongoDB {
 				int idx = (Integer) search.get("idx");
 				String subject = (String)search.get("SUBJECT");
 				
-				ContentDTO dto = new ContentDTO(idx, subject);
+				//이미지 가져오기
+				String imgs = (String) search.get("img");
+				String img[] = imgs.split(".jpg");
+				String imgResult = null;
+				String img2[] = img[0].split(".JPG");
+				img2[0] = img2[0]+".jpg";
+				imgResult = img2[0];
+				/////////////////
+				
+				
+				
+				ContentDTO dto = new ContentDTO(idx, null, null, null, imgResult, subject, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+				
 				searchResultIdx.add(dto);
 			}
 		}
