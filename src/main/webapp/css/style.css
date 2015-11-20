@@ -660,6 +660,7 @@ figure.effect-Beauty:hover p {
 .foot
 {
 	padding: 50px 0px 30px;
+	background-color: rgba(0,0,0,0.1);
 }
 .foot-logo
 {
