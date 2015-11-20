@@ -28,32 +28,7 @@
 </head>
 <body>
 <!-- 헤더부분 -->
-<nav class="navbar navbar-fixed-top menubar">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle menu-button" data-toggle="collapse" data-target="#myNavbar" aria-expanded="true">
-			<span class="glyphicon glyphicon-align-justify"></span>
-	  </button>
-      <a class="navbar-brand logo" href="/HighTempler/home.do">HighTempler</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right navstyle">
-        <li><a href="/HighTempler/home.do">Home</a></li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search" action="search.do">
-        <div class="form-group">
-          <input type="text" class="form-control" name="query" placeholder="사찰 검색">
-        </div>
-        <div class="centertext">
-        	<button type="submit" class="btn btn-nav">검색</button>
-        </div>
-      </form>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<jsp:include page="header.jsp"></jsp:include>
 <!-- 헤더부분 끝 -->
 
 
@@ -152,6 +127,12 @@
 		<br>
 	</div>
 </div>
+<div>
+	<form action="imageSearch.do">
+		<input type="hidden" name="subject" value="${dto.subject }">
+		<button type="submit" class="btn btn-primary">사찰 이미지 더보기</button>
+	</form>
+</div>
 <c:set var="imgs" value="${img}"/>
 
 <c:forEach begin="0" end="${imgs.size()-1}" step="1" var="step">
@@ -194,7 +175,7 @@
 	</div>
 	<br>
 </div>
-
+<jsp:include page="footer.jsp"></jsp:include>
 </footer>
 
 <script src="/HighTempler/js/jquery-2.1.4.min.js"></script>
