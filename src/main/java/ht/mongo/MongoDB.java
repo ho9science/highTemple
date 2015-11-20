@@ -129,7 +129,6 @@ public class MongoDB {
 				Document search = cursor.next();
 				int idx = (Integer) search.get("idx");
 				String subject = (String)search.get("SUBJECT");
-				System.out.println(subject);
 				//이미지 가져오기
 				String imgs = (String) search.get("IMG");
 				String img[] = imgs.split(".jpg");
