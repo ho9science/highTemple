@@ -8,7 +8,7 @@
       <button type="button" class="navbar-toggle menu-button" data-toggle="collapse" data-target="#myNavbar" aria-expanded="true">
 			<span class="glyphicon glyphicon-align-justify"></span>
 	  </button>
-      <a class="navbar-brand logo" href="/HighTempler/home.do">HighTempler</a>
+      <a class="navbar-brand logo" href="/HighTempler/home.do">사찰이 사찰이</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

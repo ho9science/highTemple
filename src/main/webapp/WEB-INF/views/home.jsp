@@ -22,7 +22,7 @@
 						<h1 class="hostyle" id="heads">사찰이&#013;사찰이</h1>
 						<p class="pstyle">Dev.HighTempler</p>
 						<a href="#features" class="page-scroll arrow active"> <i
-							class="fa fa-angle-down"></i>
+							class="fa fa-angle-down">/</i>
 						</a>
 					</div>
 				</div>
