@@ -119,7 +119,10 @@ public class ContentDAOImple implements ContentDAO {
 				mountiontrail = mountiontrail.replaceAll("▒", "\n");
 				
 				String regDt = (String) temple.get("REG_DT");
+				regDt = regDt.substring(0, 10);
+				
 				String edtDt = (String) temple.get("EDT_DT");
+				edtDt = edtDt.substring(0, 10);
 				 
 				dto = new ContentDTO(idx, govNm, ctgryNm, seqNum, img, subject, addr, contact, homepage, tourInfm, usefulCharge, carparkUsefullGuide, courseInfm, surroundingsAttraction, usefullGuide, runDe, operTime, runPd, trafficGuide, mountiontrail, regDt, edtDt);
 				System.out.println(subject+" DTO 생성 완료!");

@@ -212,10 +212,10 @@
 
 <div class="row col-xs-12">
 	<br>
-	<div class="col-xs-12 col-sm-6">
+	<div class="col-xs-6 col-sm-6">
 		<small>등록일:${dto.regDt}</small>
 	</div>
-	<div class="col-xs-12 col-sm-6">
+	<div class="col-xs-6 col-sm-6">
 		<small>수정일:${dto.edtDt}</small>
 	</div>
 	<br>
