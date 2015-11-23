@@ -168,11 +168,12 @@
 		
 	</div>
 
-<c:set var="imgs" value="${img}"/>
+<div class="col-xs-6 left-img">
+<c:set var="imgs" value="${leftImg}"/>
 
 <c:forEach begin="0" end="${imgs.size()-1}" step="1" var="step">
 
-<div class="col-xs-6 col-md-4">
+<div class="col-xs-12">
 	<a class="thumbnail" data-toggle="modal" data-target="#pop${step}">
 		<img alt="사찰 사진" src="${imgs[step]}" class="img-rounded img-responsive">
 	</a>
@@ -191,6 +192,37 @@
 </div><!-- /.modal -->
 
 </c:forEach>
+
+</div>
+
+
+<div class="col-xs-6 right-img">
+<c:set var="imgs" value="${rightImg}"/>
+
+<c:forEach begin="0" end="${imgs.size()-1}" step="1" var="step">
+
+<div class="col-xs-12">
+	<a class="thumbnail" data-toggle="modal" data-target="#pop${step}">
+		<img alt="사찰 사진" src="${imgs[step]}" class="img-rounded img-responsive">
+	</a>
+</div>
+
+<div class="modal fade" id="pop${step}" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      	<a data-dismiss="modal">
+      		<img src="${imgs[step]}" alt="img" class="modal-img"/>
+      	</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</c:forEach>
+
+</div>
+
 
 <div class="col-xs-12">
 	<form action="imageSearch.do">

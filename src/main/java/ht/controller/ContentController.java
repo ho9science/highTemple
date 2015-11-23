@@ -56,10 +56,22 @@ public class ContentController {
 			
 		}
 		
+		ArrayList<String> leftImg = new ArrayList<String>();
+		for (int i=0 ; i<arr.size()/2 ; i++) {
+			leftImg.add(arr.get(i));
+		}
+		
+		ArrayList<String> rightImg = new ArrayList<String>();
+		for (int i=arr.size()/2 ; i<arr.size() ; i++) {
+			rightImg.add(arr.get(i));
+		}
+		
 		
 		ModelAndView mav = new ModelAndView("content");
 		mav.addObject("result", result);
-		mav.addObject("img", arr);
+		mav.addObject("leftImg", leftImg);
+		mav.addObject("rightImg", rightImg);
+		
 		return mav;
 	}
 	

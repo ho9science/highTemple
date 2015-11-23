@@ -11,6 +11,12 @@ body{
 	color: white;
 }
 
+.left-img{
+	padding-right: 0;
+}
+.right-img{
+	padding-left: 0;
+}
 
 table
 {
