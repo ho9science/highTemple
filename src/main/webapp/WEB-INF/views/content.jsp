@@ -16,6 +16,36 @@
  height: 50%;
  }
  </style>
+<script
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe3S4Hg8O1JwFcZaGN5NcH_aWYRvDNUzQ&signed_in=false"
+	async defer></script>
+<script>
+	window.onload=function geocodeAddress() {
+
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom : 12,
+			center : {
+				lat : 37.573290,
+				lng : 128.473021
+			}
+		});
+		var geocoder = new google.maps.Geocoder();
+		var address = document.getElementById('address').value;
+		geocoder.geocode({
+			'address' : address
+		}, function(results, status) {
+			if (status === google.maps.GeocoderStatus.OK) {
+				map.setCenter(results[0].geometry.location);
+				var marker = new google.maps.Marker({
+					map : map,
+					position : results[0].geometry.location
+				});
+			} else {
+				alert('해당 이유로 지도불러오는 데 실패하였습니다: ' + status);
+			}
+		});
+	}
+</script>
 </head>
 <body>
 <!-- 헤더부분 -->
@@ -131,48 +161,11 @@
 
 
 
-		<div id="floating-panel">
-			<a data-toggle="collapse" href="#map" aria-expanded="false"
-				aria-controls="infm">
+		<div class="col-xs-12">
 				<h4 id="submit">위치보기</h4>
-			</a>
+			<div class="col-xs-12" id="map"></div>
 		</div>
-		<div class="collapse" id="map"></div>
-		<script
-			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe3S4Hg8O1JwFcZaGN5NcH_aWYRvDNUzQ&signed_in=false"
-			async defer></script>
-		<script>
-			document.getElementById('submit').addEventListener('click',
-					function() {
-						geocodeAddress();
-					});
-
-			function geocodeAddress() {
-
-				var map = new google.maps.Map(document.getElementById('map'), {
-					zoom : 12,
-					center : {
-						lat : 37.573290,
-						lng : 128.473021
-					}
-				});
-				var geocoder = new google.maps.Geocoder();
-				var address = document.getElementById('address').value;
-				geocoder.geocode({
-					'address' : address
-				}, function(results, status) {
-					if (status === google.maps.GeocoderStatus.OK) {
-						map.setCenter(results[0].geometry.location);
-						var marker = new google.maps.Marker({
-							map : map,
-							position : results[0].geometry.location
-						});
-					} else {
-						alert('해당 이유로 지도불러오는 데 실패하였습니다: ' + status);
-					}
-				});
-			}
-		</script>
+		
 	</div>
 
 <c:set var="imgs" value="${img}"/>
