@@ -28,7 +28,7 @@
 
 	<div class="col-xs-12 text-center">
 		<h3>검색 결과가 없습니다.</h3>
-		<a href="/HighTempler/"><button class="btn btn-or">홈으로 돌아가기</button></a>
+		<a href="home.do"><button class="btn btn-or">홈으로 돌아가기</button></a>
 	</div>
 </c:if>
 
@@ -37,7 +37,7 @@
 <c:forEach var="dto" items="${leftList}">
 
 <div class="col-xs-12 text-center left-img">
-<a href="/HighTempler/content.do?idx=${dto.idx}" class="thumbnail">
+<a href="content.do?idx=${dto.idx}" class="thumbnail">
 	<img alt="${dto.subject} 사진" src="${dto.img}" class="img-rounded img-responsive">
 	${dto.subject}
 </a>
