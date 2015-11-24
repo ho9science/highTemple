@@ -59,7 +59,17 @@ public class ContentController {
 			}
 			
 		}
-	
+		
+		String headerImg = "";
+		if (idx==24 || idx==25 || idx==11) {
+			
+			headerImg = arr.get(1);
+			
+		} else {
+		
+			headerImg = arr.get(0);
+		}
+		
 		
 		ArrayList<String> leftImg = new ArrayList<String>();
 		ArrayList<String> rightImg = new ArrayList<String>();
@@ -82,7 +92,7 @@ public class ContentController {
 		mav.addObject("result", result);
 		mav.addObject("leftImg", leftImg);
 		mav.addObject("rightImg", rightImg);
-		
+		mav.addObject("headerImg", headerImg);
 		return mav;
 	}
 	

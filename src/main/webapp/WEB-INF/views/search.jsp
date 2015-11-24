@@ -34,9 +34,9 @@
 <div class="col-xs-6 left-img">
 <c:forEach var="dto" items="${leftList}">
 
-<div class="col-xs-12 text-center">
+<div class="col-xs-12 text-center left-img">
 <a href="/HighTempler/content.do?idx=${dto.idx}" class="thumbnail">
-	<img alt="${dto.subject} 사진" src="${dto.img}" class="img-rounded img-reponsive">
+	<img alt="${dto.subject} 사진" src="${dto.img}" class="img-rounded img-responsive">
 	${dto.subject}
 </a>
 </div>
@@ -48,9 +48,9 @@
 <div class="col-xs-6 right-img">
 <c:forEach var="dto" items="${rightList}">
 
-<div class="col-xs-12 text-center">
+<div class="col-xs-12 text-center right-img">
 <a href="/HighTempler/content.do?idx=${dto.idx}" class="thumbnail">
-	<img alt="${dto.subject} 사진" src="${dto.img}" class="img-rounded img-reponsive">
+	<img alt="${dto.subject} 사진" src="${dto.img}" class="img-rounded img-responsive">
 	${dto.subject}
 </a>
 </div>

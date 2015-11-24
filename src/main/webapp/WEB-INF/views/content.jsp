@@ -56,7 +56,7 @@
 <div class="col-xs-12 header-img">
 	<c:set var="dto" value="${result}"/>
 	<div class="col-xs-12">
-		<img alt="메인 사진" src="${leftImg[0]}" class="img-rounded img-responsive">
+		<img alt="메인 사진" src="${headerImg}" class="img-rounded img-responsive">
 	</div>
 	
 	<div class="col-xs-12 text-left">

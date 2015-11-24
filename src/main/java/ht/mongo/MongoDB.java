@@ -130,13 +130,43 @@ public class MongoDB {
 				int idx = (Integer) search.get("idx");
 				String subject = (String)search.get("SUBJECT");
 				
+				
+				ArrayList<String> arr = new ArrayList<String>();
+				
 				//이미지 가져오기
 				String imgs = (String) search.get("IMG");
-				String img[] = imgs.split(".jpg");
-				String imgResult = null;
-				String img2[] = img[0].split(".JPG");
-				img2[0] = img2[0]+".jpg";
-				imgResult = img2[0];
+
+				String img[] = imgs.split(".jpg");	
+				
+				for(int i=0 ; i<img.length ; i++) {
+					//img[i] = img[i]+".jpg";
+					
+					String img2[] = img[i].split(".JPG");
+					for(int j=0 ; j<img2.length ; j++) {
+						
+						img2[j] = img2[j]+".jpg";
+						
+						arr.add(img2[j]);
+					}
+					
+				}
+				
+				String imgResult = "";
+				
+				if (idx==24 || idx==25 || idx==11) {
+					imgResult = arr.get(1);
+					
+				} else {
+				
+					imgResult = arr.get(0);
+				}
+				
+//				String img[] = imgs.split(".jpg");
+//				String imgResult = null;
+//				String img2[] = img[0].split(".JPG");
+//				img2[0] = img2[0]+".jpg";
+//		
+//				imgResult = img2[0];
 				/////////////////
 				
 				
