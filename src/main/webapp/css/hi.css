@@ -31,3 +31,22 @@ h4
 {
 	color : #CB5750;
 }
+ #map{
+ height: 50%;
+ }
+ p{
+ 	color: #777;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 14;
+ }
+ #addrP{
+ 	color:black;
+ 	font-weight: 500;
+ }
+ #myNavBar{
+ 	background-color: #6C9997;
+ }
+ #noneResultImg{
+ 	text-align:center;
+ }
