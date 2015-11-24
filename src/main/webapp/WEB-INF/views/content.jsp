@@ -11,11 +11,6 @@
  <link href="/HighTempler/css/bootstrap.min.css" rel="stylesheet">
  <link href="/HighTempler/css/style.css" rel="stylesheet">
  <link href="/HighTempler/css/hi.css" rel="stylesheet">
- <style>
- #map{
- height: 50%;
- }
- </style>
 <script
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe3S4Hg8O1JwFcZaGN5NcH_aWYRvDNUzQ&signed_in=false"
 	async defer></script>
@@ -64,7 +59,7 @@
 	</div>
 	
 	<div class="col-xs-12 text-left">
-		<p><small>${dto.addr}</small></p>
+		<p id="addrP"><small>${dto.addr}</small></p>
 		<input type="hidden" name="address" id="address" value="${dto.addr }">
 	</div>
 </div><!-- /.header-img -->
