@@ -12,10 +12,10 @@ body{
 }
 
 .left-img{
-	padding-right: 0;
+	padding-right: 5px;
 }
 .right-img{
-	padding-left: 0;
+	padding-left: 5px;
 }
 
 table

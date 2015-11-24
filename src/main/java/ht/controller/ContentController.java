@@ -40,9 +40,13 @@ public class ContentController {
 		
 		ContentDTO result = contentDao.getTempleInfo(idx);
 		String imgs = result.getImg();
-		String img[] = imgs.split(".jpg");
-		
 		ArrayList<String> arr = new ArrayList<String>();
+
+		
+		String img[] = imgs.split(".jpg");	
+		
+		
+	
 		for(int i=0 ; i<img.length ; i++) {
 			//img[i] = img[i]+".jpg";
 			
@@ -55,17 +59,24 @@ public class ContentController {
 			}
 			
 		}
+	
 		
 		ArrayList<String> leftImg = new ArrayList<String>();
-		for (int i=0 ; i<arr.size()/2 ; i++) {
-			leftImg.add(arr.get(i));
-		}
-		
 		ArrayList<String> rightImg = new ArrayList<String>();
-		for (int i=arr.size()/2 ; i<arr.size() ; i++) {
-			rightImg.add(arr.get(i));
-		}
 		
+		if(arr.size()>1) {
+		
+			
+			for (int i=0 ; i<arr.size()/2 ; i++) {
+				rightImg.add(arr.get(i));
+			}
+			
+			for (int i=arr.size()/2 ; i<arr.size() ; i++) {
+				leftImg.add(arr.get(i));
+			}	
+		} else {
+			leftImg.add(arr.get(0));
+		}
 		
 		ModelAndView mav = new ModelAndView("content");
 		mav.addObject("result", result);
@@ -87,8 +98,19 @@ public class ContentController {
 		
 		ArrayList<ContentDTO> result = contentDao.searchTemple(query);
 		
+		ArrayList<ContentDTO> rightList = new ArrayList<ContentDTO>();
+		for (int i=0 ; i<result.size()/2 ; i++ ) {
+			rightList.add(result.get(i));
+		}
+		
+		ArrayList<ContentDTO> leftList = new ArrayList<ContentDTO>();
+		for (int i=result.size()/2 ; i<result.size() ; i++) {
+			leftList.add(result.get(i));
+		}
+		
 		ModelAndView mav = new ModelAndView("search");
-		mav.addObject("result", result);
+		mav.addObject("leftList", leftList);
+		mav.addObject("rightList", rightList);
 		return mav;
 	}
 	

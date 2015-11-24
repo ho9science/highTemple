@@ -19,20 +19,22 @@
 <c:set var="list" value="${result}"/>
 
 <div class="col-xs-12">
-	<h2>검색 결과 : ${list.size()}개</h2>
+	<h2>검색 결과 : ${rightList.size()+leftList.size()}개</h2>
 </div>
 
 
-<c:if test="${empty list}">
+<c:if test="${empty leftList}">
 
 	<div class="col-xs-12 text-center">
 		<h3>검색 결과가 없습니다.</h3>
 	</div>
 </c:if>
 
-<c:forEach var="dto" items="${list}">
 
-<div class="col-xs-6 col-md-4 text-center">
+<div class="col-xs-6 left-img">
+<c:forEach var="dto" items="${leftList}">
+
+<div class="col-xs-12 text-center">
 <a href="/HighTempler/content.do?idx=${dto.idx}" class="thumbnail">
 	<img alt="${dto.subject} 사진" src="${dto.img}" class="img-rounded img-reponsive">
 	${dto.subject}
@@ -40,6 +42,22 @@
 </div>
 
 </c:forEach>
+</div>
+
+
+<div class="col-xs-6 right-img">
+<c:forEach var="dto" items="${rightList}">
+
+<div class="col-xs-12 text-center">
+<a href="/HighTempler/content.do?idx=${dto.idx}" class="thumbnail">
+	<img alt="${dto.subject} 사진" src="${dto.img}" class="img-rounded img-reponsive">
+	${dto.subject}
+</a>
+</div>
+
+</c:forEach>
+</div>
+
 
 <jsp:include page="footer.jsp"></jsp:include>
 

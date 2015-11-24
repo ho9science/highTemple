@@ -56,7 +56,7 @@
 <div class="col-xs-12 header-img">
 	<c:set var="dto" value="${result}"/>
 	<div class="col-xs-12">
-		<img alt="메인 사진" src="${img[0]}" class="img-rounded img-responsive">
+		<img alt="메인 사진" src="${leftImg[0]}" class="img-rounded img-responsive">
 	</div>
 	
 	<div class="col-xs-12 text-left">
@@ -94,9 +94,11 @@
  -->
 <div class="col-xs-12">
 	<div class="col-xs-12 tour-infm form-inline">
+		
 		<a data-toggle="collapse" href="#infm" aria-expanded="false" aria-controls="infm">
 			<h3>여행 정보</h3>
 		</a>
+		
 		<a class="btn btn-nav" data-toggle="collapse" href="#infm" aria-expanded="false" aria-controls="infm">
 			펼치기
 		</a>
@@ -169,22 +171,22 @@
 	</div>
 
 <div class="col-xs-6 left-img">
-<c:set var="imgs" value="${leftImg}"/>
+<c:set var="leftImg" value="${leftImg}"/>
 
-<c:forEach begin="0" end="${imgs.size()-1}" step="1" var="step">
+<c:forEach begin="0" end="${leftImg.size()-1}" step="1" var="step">
 
-<div class="col-xs-12">
-	<a class="thumbnail" data-toggle="modal" data-target="#pop${step}">
-		<img alt="사찰 사진" src="${imgs[step]}" class="img-rounded img-responsive">
+<div class="col-xs-12 left-img">
+	<a class="thumbnail" data-toggle="modal" data-target="#popleft${step}">
+		<img alt="사찰 사진" src="${leftImg[step]}" class="img-rounded img-responsive">
 	</a>
 </div>
 
-<div class="modal fade" id="pop${step}" role="dialog" aria-hidden="true">
+<div class="modal fade" id="popleft${step}" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
       	<a data-dismiss="modal">
-      		<img src="${imgs[step]}" alt="img" class="modal-img"/>
+      		<img src="${leftImg[step]}" alt="img" class="modal-img"/>
       	</a>
       </div>
     </div><!-- /.modal-content -->
@@ -197,22 +199,24 @@
 
 
 <div class="col-xs-6 right-img">
-<c:set var="imgs" value="${rightImg}"/>
+<c:set var="rightImg" value="${rightImg}"/>
 
-<c:forEach begin="0" end="${imgs.size()-1}" step="1" var="step">
+<c:if test="${!empty rightImg}">
 
-<div class="col-xs-12">
-	<a class="thumbnail" data-toggle="modal" data-target="#pop${step}">
-		<img alt="사찰 사진" src="${imgs[step]}" class="img-rounded img-responsive">
+<c:forEach begin="0" end="${rightImg.size()-1}" step="1" var="step">
+
+<div class="col-xs-12 right-img">
+	<a class="thumbnail" data-toggle="modal" data-target="#popright${step}">
+		<img alt="사찰 사진" src="${rightImg[step]}" class="img-rounded img-responsive">
 	</a>
 </div>
 
-<div class="modal fade" id="pop${step}" role="dialog" aria-hidden="true">
+<div class="modal fade" id="popright${step}" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
       	<a data-dismiss="modal">
-      		<img src="${imgs[step]}" alt="img" class="modal-img"/>
+      		<img src="${rightImg[step]}" alt="img" class="modal-img"/>
       	</a>
       </div>
     </div><!-- /.modal-content -->
@@ -220,6 +224,8 @@
 </div><!-- /.modal -->
 
 </c:forEach>
+
+</c:if>
 
 </div>
 
