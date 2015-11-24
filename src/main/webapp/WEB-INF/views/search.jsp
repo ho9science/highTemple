@@ -18,15 +18,17 @@
 
 <c:set var="list" value="${result}"/>
 
-<div class="col-xs-12">
-	<h2>검색 결과 : ${rightList.size()+leftList.size()}개</h2>
-</div>
-
+<c:if test="${!empty leftList}">
+	<div class="col-xs-12">
+		<h2>검색 결과 : ${rightList.size()+leftList.size()}개</h2>
+	</div>
+</c:if>
 
 <c:if test="${empty leftList}">
 
 	<div class="col-xs-12 text-center">
 		<h3>검색 결과가 없습니다.</h3>
+		<a href="/HighTempler/"><button class="btn btn-or">홈으로 돌아가기</button></a>
 	</div>
 </c:if>
 

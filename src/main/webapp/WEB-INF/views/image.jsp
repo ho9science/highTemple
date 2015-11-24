@@ -20,7 +20,7 @@
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<div class="alldesc">
 						<div class="col-md-6 col-sm-6 col-xs-12 centertext">
-							<p class="all-td">사찰이 사찰이</p>
+							<h3 class="all-td">네이버 이미지 검색결과</h3>
 						</div>
 					</div>
 				</div>
