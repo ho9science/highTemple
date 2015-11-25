@@ -8,9 +8,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${result.subject} :: 사찰이</title>
- <link href="/HighTempler/css/bootstrap.min.css" rel="stylesheet">
- <link href="/HighTempler/css/style.css" rel="stylesheet">
- <link href="/HighTempler/css/hi.css" rel="stylesheet">
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
+ <link href="css/hi.css" rel="stylesheet">
 <script
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe3S4Hg8O1JwFcZaGN5NcH_aWYRvDNUzQ&signed_in=false"
 	async defer></script>
@@ -249,7 +249,7 @@
 <jsp:include page="footer.jsp"></jsp:include>
 
 
-<script src="/HighTempler/js/jquery-2.1.4.min.js"></script>
-<script src="/HighTempler/js/bootstrap.min.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
