@@ -51,7 +51,7 @@
 <c:forEach var="dto" items="${rightList}">
 
 <div class="col-xs-12 text-center right-img">
-<a href="/HighTempler/content.do?idx=${dto.idx}" class="thumbnail">
+<a href="content.do?idx=${dto.idx}" class="thumbnail">
 	<img alt="${dto.subject} 사진" src="${dto.img}" class="img-rounded img-responsive">
 	${dto.subject}
 </a>
