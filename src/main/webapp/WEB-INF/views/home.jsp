@@ -8,9 +8,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>사찰이 사찰이</title>
-<link href="/HighTempler/css/bootstrap.min.css" rel="stylesheet">
-<link href="/HighTempler/css/style.css" rel="stylesheet">
-<link href="/HighTempler/css/hi.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/hi.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container-fluid banner text-center" id="banner"
@@ -76,7 +76,7 @@
 	
 	<jsp:include page="footer.jsp"></jsp:include>
 	
-	<script src="/HighTempler/js/jquery.min.js"></script>
-	<script src="/HighTempler/js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
