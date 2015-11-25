@@ -96,7 +96,7 @@
 	color: #fff;
 	font-weight: 400;
 	text-transform: uppercase;
-	font-size: 13px;
+	font-size: 11px;
 	letter-spacing: 2px;
 	padding: 0px !important;
 }
@@ -302,7 +302,7 @@
 }
 .galleryimg
 {
-	margin-top: 30px;
+	margin-top: 0px;
 }
 .mix
 {
@@ -659,7 +659,7 @@ figure.effect-Beauty:hover p {
 /------------------------------------------*/
 .foot
 {
-	padding: 50px 0px 30px;
+	padding: 10px 0px 10px;
 	background-color: rgba(0,0,0,0.1);
 }
 .foot-logo
@@ -675,7 +675,7 @@ figure.effect-Beauty:hover p {
 	font-family: "Source Sans Pro",sans-serif;
 	font-size: 12px;
 	font-weight: 600;
-	padding: 20px 0px;
+	padding: 10px 0px;
 	text-transform: uppercase;
 }
 .foot-text a

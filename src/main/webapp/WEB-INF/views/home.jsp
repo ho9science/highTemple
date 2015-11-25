@@ -14,16 +14,13 @@
 </head>
 <body>
 	<div class="container-fluid banner text-center" id="banner"
-		style="height: 498px;">
+		style="height: 140px;">
 		<div class="row">
 			<div class="col-md-12 line">
 				<div class="tablebox">
-					<div class="banner-text" id="bannertext" style="height: 498px;">
+					<div class="banner-text" id="bannertext" style="height: 160px;">
 						<h1 class="hostyle" id="heads">사찰이&#013;사찰이</h1>
 						<p class="pstyle">Dev.HighTempler</p>
-						<a href="#features" class="page-scroll arrow active"> <i
-							class="fa fa-angle-down">/</i>
-						</a>
 					</div>
 				</div>
 			</div>
@@ -37,17 +34,10 @@
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<div class="alldesc">
 						<div class="col-md-6 col-sm-6 col-xs-12 centertext">
-							<p class="all-td">사찰이 사찰이</p>
+							
 							<h2>Looking for</h2>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12"></div>
-					</div>
-				</div>
-				<div class="col-md-12 col-sm-12 col-xs-12">
-					<div class="sorting pull-left">
-						<div class="filter pull-left filimg active" data-filter="all">ShowAll</div>
-						<div class="filter pull-left filimg" data-filter=".category-1">인기</div>
-						<div class="filter pull-left filimg" data-filter=".category-2">추천</div>
+				
 					</div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12">

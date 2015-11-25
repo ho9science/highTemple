@@ -33,12 +33,9 @@ public class HomeController {
 	 * 첫 접속시 home으로 가게 하는 컨트롤러
 	 * @return /home.do (홈 컨트롤러)
 	 */
-	@RequestMapping("/home.do")
-	public String home() {
-		return "home";
-	}
+
 	
-	@RequestMapping("/homes.do")
+	@RequestMapping("/home.do")
 	public ModelAndView homes(){
 		ContentDTO result = null;
 		List<ContentDTO> list = new ArrayList<ContentDTO>();

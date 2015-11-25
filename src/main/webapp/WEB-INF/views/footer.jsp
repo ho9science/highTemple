@@ -6,7 +6,7 @@
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<div class="alldesc">
 						<div class="col-md-6 col-sm-6 col-xs-12 centertext">
-							<p class="all-td">궁금한건</p>
+							
 							<h2>Contact</h2>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12 info centertext">
