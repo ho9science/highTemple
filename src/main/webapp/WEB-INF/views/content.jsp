@@ -42,7 +42,7 @@
 	}
 </script>
 </head>
-<body>
+<body onload="kakaoStory()">
 <!-- 헤더부분 -->
 <jsp:include page="header.jsp"></jsp:include>
 <!-- 헤더부분 끝 -->
@@ -62,6 +62,15 @@
 		<p id="addrP"><small>${dto.addr}</small></p>
 		<input type="hidden" name="address" id="address" value="${dto.addr }">
 	</div>
+	<ul style="float: right; list-style: none; text-align: right;">
+	<li style="list-style: none; float: right; text-align: right;"><p>
+		<script type="text/javascript" src="//developers.band.us/js/share/band-button.js?v=20151123"></script>
+		<script type="text/javascript">
+		new ShareBand.makeButton({"lang":"ko","type":"f","text":"","withUrl":false}  );
+		</script>
+	</p></li>
+	<li style="list-style: none; float: right; text-align: right;"><p id="kakaostory-share-button"></p></li>
+	</ul>
 </div><!-- /.header-img -->
 
 <!-- 모든 사찰에 없는 값이기 때문에 삭제 
@@ -251,5 +260,7 @@
 
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="js/kakaoStory.js"></script>
 </body>
 </html>
