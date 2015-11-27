@@ -7,19 +7,19 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>사찰이 사찰이</title>
+<title>강원 사찰 정보 : 사찰이</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/hi.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container-fluid banner text-center" id="banner"
-		style="height: 140px;">
+		style="height: 170px;">
 		<div class="row">
 			<div class="col-md-12 line">
 				<div class="tablebox">
 					<div class="banner-text" id="bannertext" style="height: 160px;">
-						<h1 class="hostyle" id="heads">사찰이&#013;사찰이</h1>
+						<h1 class="hostyle" id="heads">사찰이<br><small>강원 사찰 정보</small></h1>
 						<p class="pstyle">Dev.HighTempler</p>
 					</div>
 				</div>
