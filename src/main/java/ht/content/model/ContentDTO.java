@@ -59,6 +59,15 @@ public class ContentDTO {
 		this.subject = subject;
 	}
 
+	
+
+	public ContentDTO(int idx, String img, String subject) {
+		super();
+		this.idx = idx;
+		this.img = img;
+		this.subject = subject;
+	}
+
 
 
 	public ContentDTO(int idx, String govNm, String ctgryNm, String seqNum, String img, String subject, String addr,

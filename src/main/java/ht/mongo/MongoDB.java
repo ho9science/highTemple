@@ -2,6 +2,7 @@ package ht.mongo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.bson.Document;
 
@@ -181,4 +182,96 @@ public class MongoDB {
 		return searchResultIdx;
 	}
 	
+	
+	public ArrayList<ContentDTO> randomContent() {
+		
+		//몽고DB 연결, hightempler데이터베이스 내의 temple 컬렉션 가져오기 
+		MongoClientURI mongoUri = new MongoClientURI(uri);
+		client = new MongoClient(mongoUri);
+		MongoDatabase db = client.getDatabase("hightempler");
+		MongoCollection<Document> coll = db.getCollection("temple");
+				
+		
+
+		//1~41 난수 10개 뽑기
+		List<Integer> idxs = new ArrayList<Integer>();
+
+		//난수생성
+		for(int i=0 ; i<10 ; i++) {
+			int random = (int) (Math.random()*41+1);
+			
+			idxs.add(random);
+			
+			for(int j=0 ; j<i ; j++) {
+				if(idxs.get(j)==random){
+					idxs.remove(i);
+					i--;
+					break;
+				}
+			}
+		}
+		
+		for(int i=0 ; i<idxs.size() ; i++){
+			System.out.println(idxs.get(i));
+		}
+		
+		
+		
+		//find 명령어를 위한 BSON 생성 {idxs:{$in:[랜덤 난수 10개]}}
+		Document regex = new Document("$in", idxs);
+		Document doc = new Document("idx", regex);
+		
+
+		//find
+		FindIterable<Document> result = coll.find(doc);
+		
+		//Iterator로 반환 (While문으로 돌리기 위해서)
+		MongoCursor<Document> cursor = result.iterator();
+		
+		System.out.println(cursor.hasNext());
+		
+		ArrayList<ContentDTO> resultArr = new ArrayList<ContentDTO>();
+		while (cursor.hasNext()) {
+			Document dto = cursor.next();
+			int idx = dto.getInteger("idx");
+			String subject = dto.getString("SUBJECT");
+			String img = dto.getString("IMG");
+			
+			String imgArr[] = img.split(".jpg");
+			
+			
+			ArrayList<String> imgArrList = new ArrayList<String>();
+			for(int i=0 ; i<imgArr.length ; i++) {
+				String imgArr2[] = imgArr[i].split(".JPG");
+				
+				for(int j=0 ; j<imgArr2.length ; j++) {
+					
+					String splitImg = imgArr2[j]+".jpg";
+					
+					System.out.println(splitImg);
+					imgArrList.add(splitImg);
+				}
+				
+			}
+			
+			
+			if (idx==24 || idx==25 || idx==11) {
+				
+				img = imgArrList.get(1);
+				
+			} else {
+			
+				img = imgArrList.get(0);
+			}
+			
+			System.out.println(idx+subject+img);
+			ContentDTO content = new ContentDTO(idx, img, subject);
+			
+			resultArr.add(content);
+			
+		}
+		
+		
+		return resultArr;
+	}
 }

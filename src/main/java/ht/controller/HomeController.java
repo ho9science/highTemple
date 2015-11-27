@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ht.content.model.ContentDAO;
 import ht.content.model.ContentDTO;
+import ht.mongo.MongoDB;
 
 @Controller
 public class HomeController {
@@ -37,7 +38,8 @@ public class HomeController {
 	
 	@RequestMapping("/home.do")
 	public ModelAndView homes(){
-		ContentDTO result = null;
+		
+		/*ContentDTO result = null;
 		List<ContentDTO> list = new ArrayList<ContentDTO>();
 		ArrayList<String> imgArr = null;
 		
@@ -80,7 +82,11 @@ public class HomeController {
 			}
 			
 			list.add(result);
-		}
+		}*/
+		
+		MongoDB db = new MongoDB();
+		ArrayList<ContentDTO> list = db.randomContent();
+		
 		ModelAndView mav = new ModelAndView("home");
 		mav.addObject("list",list);
 		return mav;
