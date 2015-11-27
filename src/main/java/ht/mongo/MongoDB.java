@@ -211,9 +211,9 @@ public class MongoDB {
 			}
 		}
 		
-		for(int i=0 ; i<idxs.size() ; i++){
-			System.out.println(idxs.get(i));
-		}
+//		for(int i=0 ; i<idxs.size() ; i++){
+//			System.out.println(idxs.get(i));
+//		}
 		
 		
 		
@@ -248,7 +248,7 @@ public class MongoDB {
 					
 					String splitImg = imgArr2[j]+".jpg";
 					
-					System.out.println(splitImg);
+					//System.out.println(splitImg);
 					imgArrList.add(splitImg);
 				}
 				
@@ -264,7 +264,7 @@ public class MongoDB {
 				img = imgArrList.get(0);
 			}
 			
-			System.out.println(idx+subject+img);
+			//System.out.println(idx+subject+img);
 			ContentDTO content = new ContentDTO(idx, img, subject);
 			
 			resultArr.add(content);
