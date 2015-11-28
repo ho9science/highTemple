@@ -182,7 +182,10 @@ public class MongoDB {
 		return searchResultIdx;
 	}
 	
-	
+	/**
+	 * 1~41까지의 중복값 없는 난수를 10개 뽑아 사찰정보를 리스트로 반환 
+	 * @return
+	 */
 	public ArrayList<ContentDTO> randomContent() {
 		
 		//몽고DB 연결, hightempler데이터베이스 내의 temple 컬렉션 가져오기 
@@ -228,7 +231,7 @@ public class MongoDB {
 		//Iterator로 반환 (While문으로 돌리기 위해서)
 		MongoCursor<Document> cursor = result.iterator();
 		
-		System.out.println(cursor.hasNext());
+//		System.out.println(cursor.hasNext());
 		
 		ArrayList<ContentDTO> resultArr = new ArrayList<ContentDTO>();
 		while (cursor.hasNext()) {
