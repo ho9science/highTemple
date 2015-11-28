@@ -14,7 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right navstyle">
-        <li><a href="/HighTempler/home.do">Home</a></li>
+        <li><a href="home.do">Home</a></li>
       </ul>
       <form class="navbar-form navbar-left" role="search" action="search.do">
         <div class="form-group">
