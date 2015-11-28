@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${result.subject}:: 사찰이</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/hi.css" rel="stylesheet">
-<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=72b97d5dda12848c175cb0f1374dbcb3&libraries=services"></script>
 <script>
 window.onload=function(){
 	var mapContainer = document.getElementById('map'), 
@@ -192,9 +192,21 @@ window.onload=function(){
 
 
 
-		<div class="col-xs-12">
+		<div class="col-xs-12" id="upMap">
 			<h4 id="submit">위치보기</h4>
-			<div class="col-xs-12" id="map" style="width:370px;"></div>
+			<div class="col-xs-12" id="map" style="width:360px; height:400px;">
+			<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=72b97d5dda12848c175cb0f1374dbcb3&libraries=services"></script>
+			<script>
+			var mapContainer = document.getElementById('map'), 
+			mapOption = {
+				center : new daum.maps.LatLng(37.573290, 128.473021), 
+				level : 4
+
+			};
+		 
+			var map = new daum.maps.Map(mapContainer, mapOption);
+			</script>
+			</div>
 		</div>
 
 	</div>
@@ -232,7 +244,7 @@ window.onload=function(){
 	</div>
 
 
-	<div class="col-xs-6 right-img">
+	<div class="col-xs-6 right-img" >
 		<c:set var="rightImg" value="${rightImg}" />
 
 		<c:if test="${!empty rightImg}">
@@ -269,7 +281,7 @@ window.onload=function(){
 	</div>
 
 
-	<div class="col-xs-12" id="upMap">
+	<div class="col-xs-12">
 		<form action="imageSearch.do">
 			<input type="hidden" name="subject" value="${dto.subject }">
 			<button type="submit" class="btn btn-nav">사찰 이미지 더보기</button>
